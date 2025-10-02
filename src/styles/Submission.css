@@ -1,0 +1,380 @@
+/* Header Section */
+.submission-page {
+	width: 100vw;
+	height: 100vh;
+	min-height: 100vh;
+	background: #f9fafb;
+	padding: 0;
+	margin: 0;
+	overflow-y: auto;
+	box-sizing: border-box;
+}
+
+.required-info-container {
+	background: transparent;
+	border-radius: 0;
+	box-shadow: none;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	min-height: 100vh;
+	margin: 0;
+	font-family: "Samsung InterFace";
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	box-sizing: border-box;
+}
+
+.section-title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-bottom: 18px;
+	margin-top: 0;
+	margin-left: 24px;
+	display: flex;
+	align-items: center;
+	color: #222;
+}
+
+.awareness-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: none;
+}
+
+.note-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6B7280;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.awareness-section {
+	background: var(--bg, #FFFFFF);
+	border-radius: 12px;
+	padding: 24px 32px 24px 52px;
+	margin: -10px auto 0 auto;
+	border: 1px solid #F5F5F5;
+	max-width: 100%;
+	width: 100%;
+	box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+	flex-shrink: 0;
+	box-sizing: border-box;
+	min-height: calc(100vh - 4rem);
+}
+
+.awareness-title {
+	font-size: 18px;
+	font-weight: 700;
+	margin-bottom: 0;
+	color: #222;
+	font-family: "Samsung InterFace";
+}
+
+.awareness-form {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.question-block {
+	margin-bottom: 10px;
+	padding-left: 16px;
+}
+.question-label {
+	font-size: 14px;
+	margin-bottom: 8px;
+	display: block;
+	color: #222;
+	font-weight: 700;
+	font-family: "Samsung InterFace";
+}
+.options-group {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin-top: 6px;
+}
+.option-radio {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	background: #fff;
+	border-radius: 8px;
+	padding: 12px 16px;
+	border: 1px solid #F0F0F0;
+	font-size: 14px;
+	color: #374151;
+	font-weight: 400;
+	cursor: pointer;
+	font-family: "Samsung InterFace";
+}
+
+.option-radio.selected {
+  border-color: #38BDF8;
+  background-color: #F0F9FF;
+}
+
+.option-radio input[type="radio"] {
+	accent-color: #2563eb;
+	margin-right: 8px;
+  /* Hide the default radio button */
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.custom-radio {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #D1D5DB;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+.option-radio.selected .custom-radio {
+  background-color: #2563EB;
+  border-color: #2563EB;
+}
+
+.custom-radio::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 7px;
+  top: 4px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.option-radio.selected .custom-radio::after {
+  display: block;
+}
+
+
+.declaration-section {
+	background: transparent;
+	border-radius: 8px;
+	padding: 18px 0;
+	border: none;
+	margin-bottom: 18px;
+	color: #222;
+}
+.declaration-title {
+	font-size: 18px;
+	font-weight: 700;
+	margin-bottom: 16px;
+	color: #222;
+	font-family: "Samsung InterFace";
+}
+.declaration-list {
+	margin: 0 0 24px 0;
+	padding-left: 18px;
+	font-size: 14px;
+	color: #222;
+	font-family: "Samsung InterFace";
+}
+
+.declaration-list li {
+	margin-bottom: 16px;
+}
+
+.declaration-list li:last-child {
+	margin-bottom: 0;
+}
+.declaration-checkbox {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 14px;
+	color: #222;
+	font-weight: 500;
+	font-family: "Samsung InterFace";
+}
+.declaration-checkbox input[type="checkbox"] {
+	accent-color: #2563eb;
+	margin-right: 8px;
+	width: 16px;
+	height: 16px;
+	opacity: 0;
+	position: absolute;
+}
+
+.custom-checkbox {
+	width: 19px;
+	height: 19px;
+	border: 2px solid #D1D5DB;
+	border-radius: 4px;
+	display: inline-block;
+	position: relative;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.declaration-checkbox input[type="checkbox"]:checked + .custom-checkbox {
+	background-color: #2563EB;
+	border-color: #2563EB;
+}
+
+.custom-checkbox::after {
+	content: "";
+	position: absolute;
+	display: none;
+	left: 7px;
+	top: 4px;
+	width: 4px;
+	height: 8px;
+	border: solid white;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+}
+
+.declaration-checkbox input[type="checkbox"]:checked + .custom-checkbox::after {
+	display: block;
+}
+
+.comment-section {
+	margin-bottom: 0;
+	margin-top: -30px;
+}
+.comment-label {
+	font-size: 14px;
+	font-weight: 700;
+	margin-bottom: 8px;
+	margin-top: 10px;
+	display: block;
+	color: #222;
+	font-family: "Samsung InterFace";
+}
+.comment-box {
+	width: 100%;
+	padding: 40px 10px 10px 10px;
+	border-radius: 6px;
+	border: 1px solid #d1d5db;
+	font-size: 14px;
+	font-family: "Samsung InterFace";
+	color: #222;
+	background-color: #fff;
+	min-height: 100px;
+	box-sizing: border-box;
+	resize: vertical;
+}
+
+.comment-box::placeholder {
+	color: #9ca3af;
+	font-weight: bold;
+}
+.comment-box:focus {
+	outline: none;
+	border-color: #2563eb;
+	box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.form-actions-container {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.view-policies-button {
+  background: none;
+  border: none;
+  color: #6B7280;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-start;
+  margin-top: 40px;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.form-buttons {
+	display: flex;
+	justify-content: flex-end;
+	gap: 12px;
+  width: 100%;
+}
+
+.form-buttons button {
+	padding: 10px 32px;
+	border-radius: 6px;
+	font-size: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+	box-sizing: border-box;
+}
+
+.cancel-button {
+	background-color: #fff;
+	color: #38bdf8;
+	border: 1px solid #38bdf8;
+	height: 38px;
+	width: 70px; /* Adjusted width to better fit content */
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.cancel-button:hover {
+	background-color: #f0f9ff;
+}
+.submit-button {
+	background-color: #5DBBDB !important;
+	color: white !important;
+	border: none;
+	border-radius: 8px;
+	height: 38px;
+	width: 69px;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.submit-button:hover {
+	background-color: #4AACCC !important;
+}
+.submit-button:disabled {
+	background-color: #F5F5F5;
+	cursor: not-allowed;
+	color: #9ca3af;
+}
+
+.view-policies-button {
+  background: none;
+  border: none;
+  color: #6B7280;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.document-icon {
+  width: 20px;
+  height: 20px;
+}
