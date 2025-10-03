@@ -61,11 +61,13 @@
 }
 
 .awareness-section {
-	background: var(--bg, #FFFFFF);
+	background: #F9FAFB;
 	border-radius: 12px;
 	padding: 24px 32px 24px 52px;
+	padding-left: 42px;
+	padding-right: 42px;
 	margin: -10px auto 0 auto;
-	border: 1px solid #F5F5F5;
+	border: 2px solid #D1D5DB;
 	max-width: 100%;
 	width: 100%;
 	box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.03);
@@ -91,6 +93,16 @@
 .question-block {
 	margin-bottom: 10px;
 	padding-left: 16px;
+	background: transparent;
+	border: none;
+	padding: 0;
+}
+.questions-container {
+	background: #FFFFFF;
+	border: none;
+	border-radius: 8px;
+	padding: 16px 20px;
+	margin-bottom: 10px;
 }
 .question-label {
 	font-size: 14px;
@@ -172,10 +184,14 @@
 	background: transparent;
 	border-radius: 8px;
 	padding: 18px 0;
+	padding-left: 18px;
 	border: none;
 	margin-bottom: 18px;
+	margin-left: 0px;
 	color: #222;
+	font-family: "Samsung InterFace";
 }
+
 .declaration-title {
 	font-size: 18px;
 	font-weight: 700;
@@ -183,16 +199,13 @@
 	color: #222;
 	font-family: "Samsung InterFace";
 }
+
 .declaration-list {
 	margin: 0 0 24px 0;
 	padding-left: 18px;
 	font-size: 14px;
 	color: #222;
 	font-family: "Samsung InterFace";
-}
-
-.declaration-list li {
-	margin-bottom: 16px;
 }
 
 .declaration-list li:last-child {
@@ -252,12 +265,17 @@
 .comment-section {
 	margin-bottom: 0;
 	margin-top: -30px;
+	background: transparent;
+	border: none;
+	border-radius: 8px;
+	padding: 16px 20px;
+	padding-left: 20px;
+	margin-left: 0px;
 }
 .comment-label {
 	font-size: 14px;
 	font-weight: 700;
 	margin-bottom: 8px;
-	margin-top: 10px;
 	display: block;
 	color: #222;
 	font-family: "Samsung InterFace";
@@ -266,24 +284,58 @@
 	width: 100%;
 	padding: 40px 10px 10px 10px;
 	border-radius: 6px;
-	border: 1px solid #d1d5db;
+	border: 1px solid #E5E7EB;
 	font-size: 14px;
 	font-family: "Samsung InterFace";
 	color: #222;
 	background-color: #fff;
+	font-weight: 700;
 	min-height: 100px;
 	box-sizing: border-box;
 	resize: vertical;
 }
 
 .comment-box::placeholder {
-	color: #9ca3af;
-	font-weight: bold;
+	color: var(--placeholder-color, #9ca3af) !important;
+	font-weight: var(--placeholder-font-weight, 700) !important;
+	font-family: "Samsung InterFace", sans-serif !important;
+}
+.comment-box::-webkit-input-placeholder {
+	color: var(--placeholder-color, #9ca3af) !important;
+	font-weight: var(--placeholder-font-weight, 700) !important;
+	font-family: "Samsung InterFace", sans-serif !important;
+}
+.comment-box::-moz-placeholder {
+	color: var(--placeholder-color, #9ca3af) !important;
+	font-weight: var(--placeholder-font-weight, 700) !important;
+	font-family: "Samsung InterFace", sans-serif !important;
+}
+.comment-box:-ms-input-placeholder {
+	color: var(--placeholder-color, #9ca3af) !important;
+	font-weight: var(--placeholder-font-weight, 700) !important;
+	font-family: "Samsung InterFace", sans-serif !important;
 }
 .comment-box:focus {
 	outline: none;
-	border-color: #2563eb;
-	box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+	border-color: #d1d5db;
+	box-shadow: none;
+	background-color: #fff;
+	color: #222;
+}
+.comment-box:focus::placeholder {
+	color: var(--placeholder-color, #9ca3af) !important;
+	font-weight: var(--placeholder-font-weight, 700) !important;
+	font-family: "Samsung InterFace", sans-serif !important;
+}
+.comment-box:focus::-webkit-input-placeholder {
+	color: var(--placeholder-color, #9ca3af) !important;
+	font-weight: var(--placeholder-font-weight, 700) !important;
+	font-family: "Samsung InterFace", sans-serif !important;
+}
+.comment-box:focus::-moz-placeholder {
+	color: var(--placeholder-color, #9ca3af) !important;
+	font-weight: var(--placeholder-font-weight, 700) !important;
+	font-family: "Samsung InterFace", sans-serif !important;
 }
 
 .form-actions-container {
@@ -339,7 +391,20 @@
 	justify-content: center;
 }
 .cancel-button:hover {
-	background-color: #f0f9ff;
+	background-color: #fff;
+	color: #38bdf8;
+	border: 1px solid #38bdf8;
+}
+.cancel-button:focus {
+	background-color: #fff;
+	color: #38bdf8;
+	border: 1px solid #38bdf8;
+	outline: none;
+}
+.cancel-button:active {
+	background-color: #fff;
+	color: #38bdf8;
+	border: 1px solid #38bdf8;
 }
 .submit-button {
 	background-color: #5DBBDB !important;

@@ -5,7 +5,40 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: visible;
+    padding-left: 10px; /* Reduced left padding */
   }
+
+/* Wrapper for video and declaration section with border */
+.video-section-wrapper {
+  width: calc(100% + 20px);
+  max-width: none;
+  flex-shrink: 0;
+  border: none; /* Removed horizontal border line */
+  border-radius: 8px;
+  overflow: visible;
+  background: var(--bg, #F9FAFB);
+  margin: 0 -10px 0 0; /* Reduced left margin, small right margin */
+  padding: 0 45px;
+  box-sizing: border-box;
+  box-shadow: none; /* Removed shadow that could appear as line */
+}
+
+.page-title {
+  color: var(--Text-txt-primary, #000);
+  font-family: "Samsung InterFace";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 0.25px;
+  padding: 20px 32px 0 10px; /* Reduced left padding */
+  margin: 0 -20px 20px 0; /* Removed negative left margin */
+  text-align: left;
+  background: var(--bg, #F9FAFB);
+  width: calc(100% + 20px); /* Reduced width */
+  box-sizing: border-box;
+}
   
   .video-card {
     width: calc(100% - 40px);
@@ -80,6 +113,9 @@
     overflow: visible;
     z-index: 1;
     position: relative;
+    width: calc(100% + 20px); /* Reduced width */
+    margin: 0 -10px 0 0; /* Reduced left margin */
+    max-width: none;
   }
 
   .video-thumbnail-container {
@@ -334,6 +370,9 @@
   .declaration-section {
     background: #f8fafc;
     padding: 32px;
+    width: calc(100% + 40px);
+    margin: 0 -20px;
+    box-sizing: border-box;
   }
   
   .declaration-title {
@@ -529,6 +568,16 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+.note-vector2-icon {
+  position: absolute;
+  top: -26px;
+  right: 2px;
+  width: 6px;
+  height: 8px;
+  flex-shrink: 0;
+  z-index: 12;
+}
+
 .note-vector-icon {
   position: absolute;
   top: -22px;
@@ -568,11 +617,11 @@
 
 .take-test-text {
   text-align: right;
-  margin: 20px 20px 20px auto;
+  margin: 20px -10px 20px auto;
   font-size: 14px;
   font-weight: 500;
   color: #0EA5E9;
-  border: 1px solid #0EA5E9;
+  border: none; /* Removed horizontal border line */
   border-radius: 6px;
   padding: 8px 16px;
   background-color: #FFFFFF;

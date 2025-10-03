@@ -6,13 +6,29 @@
   padding: 0;
   box-sizing: border-box;
   overflow: hidden;
-  padding-left: 30px; /* Increased left padding to 30px */
+  padding-left: 10px; /* Reduced left padding */
+  background: #F9FAFB !important;
+}
+
+/* Wrapper for video and declaration section with border */
+.video-section-wrapper {
+  width: 100%;
+  max-width: none;
+  flex-shrink: 0;
+  border: 3px solid #F3F4F6 !important; /* Very light gray border */
+  border-radius: 8px;
+  overflow: visible;
+  background: #F9FAFB !important; /* Light background */
+  margin: 20px auto; /* Center with margins */
+  padding: 20px; /* Add padding */
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow */
 }
 
 .video-card {
-  width: calc(100% - 40px);
+  width: 100%;
   max-width: 100%;
-  margin: 0 20px;
+  margin: 0 0 0 0; /* Removed left margin to move video left */
   padding: 0;
   overflow: hidden;
   position: relative;
@@ -80,10 +96,11 @@
 
 /* Removed hover effects from video thumbnail */
 .training-videos-container {
-  max-width: 1800px;
-  margin: 0 auto;
-  padding: 0 20px 20px 20px; /* Removed top padding */
+  max-width: 1800px !important;
+  margin: 0 auto !important;
+  padding: 0 40px 20px 40px !important; /* Reverted to original padding */
   font-family: "Samsung InterFace";
+  background: #F9FAFB !important;
 }
 
 .page-title {
@@ -94,15 +111,16 @@
   font-weight: 700;
   line-height: 120%; /* 21.6px */
   letter-spacing: 0.25px;
-  padding: 0;
-  margin: 15px 0 20px 0;
+  padding: 3px 32px 0 27px; /* Reduced by 5px from original 32px */
+  margin: 0 0 20px 0;
   text-align: left;
+  background: var(--bg, #F9FAFB);
 }
 
 .video-card {
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  box-shadow: none;
   overflow: hidden;
 }
 
@@ -317,8 +335,9 @@
 }
 
 .declaration-section {
-  background: #f8fafc;
-  padding: 32px;
+  background: var(--bg, #F9FAFB);
+  padding: 12px 12px 12px 7px; /* Reduced by 5px from original 12px */
+  border-top: 1px solid #E5E7EB;
 }
 
 .declaration-title {
@@ -471,7 +490,12 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .training-videos-container {
-    padding: 0 15px 15px 15px;
+    padding: 0 30px 15px 30px; /* Increased mobile padding */
+  }
+  
+  .video-section-wrapper {
+    width: calc(100% - 20px);
+    margin: 0 10px; /* Reduced wrapper margins for mobile */
   }
   
   .page-title {

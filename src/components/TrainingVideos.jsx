@@ -83,54 +83,57 @@ const TrainingVideos = ({ presenterImage }) => {
   );
 
   return (
-    <div className="training-videos-container">
-      <h1 className="page-title">Phishing Awareness Video</h1>
-      
-      <div className="video-card">
-        <div className="video-thumbnail-container">
-          <img 
-            src={videoThumbnail}
-            alt="Video Thumbnail"
-            className="video-thumbnail"
-          />
-          <div className="play-icon-overlay">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="#1f2937" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 5.00014V19.0001L19 12.0001L8 5.00014Z" fill="currentColor"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      {/* Declaration Section */}
-      <div className="declaration-section">
-        <h3 className="declaration-title">Declaration</h3>
-        
-        <div className="declaration-content">
-          <p className="declaration-point">
-            <span className="bullet">•</span> I hereby declare that I have gone through the "Online Phishing awareness session" and understood the dos and don'ts of phishing and will abide by it.
-          </p>
-          <p className="declaration-point">
-            <span className="bullet">•</span> I understand that I will be liable for strict HR action in case I click on any link / attachment in any future phishing emails in SAMSUNG network.
-          </p>
-        </div>
-
-        <div className="declaration-footer">
-          <div className="agreement-section">
-            <label className="checkbox-container">
-              <input
-                type="checkbox"
-                checked={isAgreed}
-                onChange={(e) => setIsAgreed(e.target.checked)}
-                className="checkbox-input"
+    <div style={{width: '100vw', padding: '0 20px', boxSizing: 'border-box', background: '#F9FAFB', minHeight: '100vh'}}>
+      <div className="training-videos-container">
+        <div className="video-section-wrapper" style={{transform: 'translateX(-25px)'}}>
+          <h1 className="page-title">Phishing Awareness Video</h1>
+          <div className="video-card">
+            <div className="video-thumbnail-container">
+              <img 
+                src={videoThumbnail}
+                alt="Video Thumbnail"
+                className="video-thumbnail"
               />
-              <span className="custom-checkbox"></span>
-              <span className="checkbox-label">I Agree</span>
-            </label>
-            <div className="view-policies-container">
-              <button className="view-policies-btn">
-                <img src={viewPoliceIcon} alt="View Policies" className="document-icon" />
-                <span>View Policies</span>
-              </button>
+              <div className="play-icon-overlay">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#1f2937" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 5.00014V19.0001L19 12.0001L8 5.00014Z" fill="currentColor"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          {/* Declaration Section */}
+          <div className="declaration-section">
+            <h3 className="declaration-title">Declaration</h3>
+            
+            <div className="declaration-content">
+              <p className="declaration-point">
+                <span className="bullet">•</span> I hereby declare that I have gone through the "Online Phishing awareness session" and understood the dos and don'ts of phishing and will abide by it.
+              </p>
+              <p className="declaration-point">
+                <span className="bullet">•</span> I understand that I will be liable for strict HR action in case I click on any link / attachment in any future phishing emails in SAMSUNG network.
+              </p>
+            </div>
+
+            <div className="declaration-footer">
+              <div className="agreement-section">
+                <label className="checkbox-container">
+                  <input
+                    type="checkbox"
+                    checked={isAgreed}
+                    onChange={(e) => setIsAgreed(e.target.checked)}
+                    className="checkbox-input"
+                  />
+                  <span className="custom-checkbox"></span>
+                  <span className="checkbox-label">I Agree</span>
+                </label>
+                <div className="view-policies-container">
+                  <button className="view-policies-btn">
+                    <img src={viewPoliceIcon} alt="View Policies" className="document-icon" />
+                    <span>View Policies</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

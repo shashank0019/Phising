@@ -4,6 +4,7 @@ import '../styles/Report.css';
 import videoThumbnail from '../assets/svg/& Video.png';
 import beak from '../assets/svg/Beak (Stroke).svg';
 import vector from '../assets/svg/Vector.svg';
+import vector2 from '../assets/svg/Vector (2).svg';
 import GroupIcon from '../assets/svg/Group.svg';
 import chevronRight from '../assets/svg/Chevron right.svg';
 
@@ -12,6 +13,7 @@ const Report = ({ presenterImage }) => {
   const [currentTime, setCurrentTime] = useState(507);
   const [duration, setDuration] = useState(928);
   const [isAgreed, setIsAgreed] = useState(false);
+  const [isNoteVisible, setIsNoteVisible] = useState(true);
 
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
@@ -33,6 +35,10 @@ const Report = ({ presenterImage }) => {
     const clickPercentage = clickX / progressWidth;
     const newTime = Math.floor(clickPercentage * duration);
     setCurrentTime(newTime);
+  };
+
+  const toggleNoteVisibility = () => {
+    setIsNoteVisible(!isNoteVisible);
   };
 
   // SVG Icons as components
@@ -85,57 +91,77 @@ const Report = ({ presenterImage }) => {
   );
 
   return (
-    <div className="training-videos-container">
-      <h1 className="page-title">Phishing Awareness Video</h1>
-      
-      <div className="video-card">
-        <div className="video-thumbnail-container">
-          <img 
-            src={videoThumbnail}
-            alt="Video Thumbnail"
-            className="video-thumbnail"
-          />
-          <div className="play-icon-overlay">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="#1f2937" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 5.00014V19.0001L19 12.0001L8 5.00014Z" fill="currentColor"/>
-            </svg>
-          </div>
-          
-          {/* Note Section - Positioned in top-right corner of video */}
-          <div className="note-section">
-            <img src={vector} alt="Vector" className="note-vector-icon" />
-            <img src={beak} alt="Beak" className="note-beak-icon" />
-            <div className="note-header">
-              <span className="note-label">Note:</span>
-            </div>
-            <div className="note-content">
-              <p>1. Please double click on the video for full screen. Please do watch the video completely and when <strong>"Take the Test Now"</strong> button appears, click on the button to view and answer the Questions.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div style={{width: '100vw', padding: '0 20px', boxSizing: 'border-box'}}>
+      <div className="training-videos-container">
+        <div className="video-section-wrapper" style={{transform: 'translateX(-25px)'}}>
+          <h1 className="page-title">Phishing Awareness Video</h1>
+          <div className="video-card">
+            <div className="video-thumbnail-container">
+              <img 
+                src={videoThumbnail}
+                alt="Video Thumbnail"
+                className="video-thumbnail"
+              />
+              <div className="play-icon-overlay">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#1f2937" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 5.00014V19.0001L19 12.0001L8 5.00014Z" fill="currentColor"/>
+                </svg>
+              </div>
+              
+              {/* Vector icons - Always visible for toggling */}
+              <img 
+                src={vector2} 
+                alt="Vector 2" 
+                className="note-vector2-icon" 
+                onClick={toggleNoteVisibility}
+                style={{cursor: 'pointer', position: 'absolute', top: '-26px', right: '2px', zIndex: '12'}}
+              />
+              <img 
+                src={vector} 
+                alt="Vector" 
+                className="note-vector-icon" 
+                onClick={toggleNoteVisibility}
+                style={{cursor: 'pointer', position: 'absolute', top: '-22px', right: '2px', zIndex: '11'}}
+              />
 
-      {/* Take the Test Button - Positioned below video card */}
-      <div className="take-test-text">
-        Take the Test Now
-        <img src={chevronRight} alt="Chevron Right" className="chevron-icon" />
-      </div>
+              {/* Note Section - Positioned in top-right corner of video */}
+              {isNoteVisible && (
+                <div className="note-section">
+                  <img src={beak} alt="Beak" className="note-beak-icon" />
+                  <div className="note-header">
+                    <span className="note-label">Note:</span>
+                  </div>
+                  <div className="note-content">
+                    <p>1. Please double click on the video for full screen. Please do watch the video completely and when <strong>"Take the Test Now"</strong> button appears, click on the button to view and answer the Questions.</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
 
-      {/* Declaration Section */}
-      <div className="declaration-section">
-        <div className="declaration-footer">
-          <div className="agreement-section">
-            <div className="view-policies-container">
-              <button className="view-policies-btn">
-                <img src={GroupIcon} alt="Group Icon" className="document-icon" />
-                <span>View Policies</span>
-              </button>
+          {/* Take the Test Button - Positioned below video card */}
+          <div className="take-test-text">
+            Take the Test Now
+            <img src={chevronRight} alt="Chevron Right" className="chevron-icon" />
+          </div>
+
+          {/* Declaration Section */}
+          <div className="declaration-section">
+            <div className="declaration-footer">
+              <div className="agreement-section">
+                <div className="view-policies-container">
+                  <button className="view-policies-btn">
+                    <img src={GroupIcon} alt="Group Icon" className="document-icon" />
+                    <span>View Policies</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Report;

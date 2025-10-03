@@ -1,7 +1,9 @@
-// TrainingVideos.jsx
+// Submission.jsx
 import React, { useState } from 'react';
 import '../styles/Submission.css';
 import GroupIcon from '../assets/svg/Group.svg';
+import vector from '../assets/svg/Vector.svg';
+import vector2 from '../assets/svg/Vector (2).svg';
 
 const VectorIcon = () => (
   <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,6 +29,11 @@ const Submission = () => {
   const [q1, setQ1] = useState('');
   const [q2, setQ2] = useState('');
   const [comment, setComment] = useState('');
+  const [isNoteVisible, setIsNoteVisible] = useState(false);
+
+  const toggleNoteVisibility = () => {
+    setIsNoteVisible(!isNoteVisible);
+  };
 
   return (
     <div className="submission-page">
@@ -34,51 +41,72 @@ const Submission = () => {
         <div className="awareness-section">
           <div className="awareness-header">
             <h3 className="awareness-title">Awareness Training Questions</h3>
-            <button className="note-button">
-              <VectorIcon />
-              <span>Note</span>
-            </button>
+            <div style={{position: 'relative'}}>
+              <button className="note-button">
+                <VectorIcon />
+                <span>Note</span>
+              </button>
+
+              {/* Vector (2) icon positioned on top of note button */}
+              <img
+                src={vector2}
+                alt="Vector 2"
+                className="note-vector2-icon"
+                onClick={toggleNoteVisibility}
+                style={{
+                  cursor: 'pointer',
+                  position: 'absolute',
+                  top: '4px',
+                  right: '20px',
+                  zIndex: '12',
+                  width: '6px',
+                  height: '6px'
+                }}
+              />
+            </div>
           </div>
           <form className="awareness-form" onSubmit={(e) => e.preventDefault()}>
-            <div className="question-block">
-              <label className="question-label" htmlFor="q1">1. How would you report the email as SPAM in KNOX Portal *</label>
-              <div className="options-group">
-                <label className={`option-radio ${q1 === 'op1' ? 'selected' : ''}`}>
-                  <input type="radio" id="q1-op1" name="q1" value="op1" checked={q1 === 'op1'} onChange={(e) => setQ1(e.target.value)} />
-                  <span className="custom-radio"></span>
-                  By Simple forwarding it to the SRI-B Information Security team.
-                </label>
-                <label className={`option-radio ${q1 === 'op2' ? 'selected' : ''}`}>
-                  <input type="radio" id="q1-op2" name="q1" value="op2" checked={q1 === 'op2'} onChange={(e) => setQ1(e.target.value)} />
-                  <span className="custom-radio"></span>
-                  By Using the KNOX Portal &quot;Report SPAM&quot; feature. So that my colleagues get an alert as Spam, When they open the said email
-                </label>
-                <label className={`option-radio ${q1 === 'op3' ? 'selected' : ''}`}>
-                  <input type="radio" id="q1-op3" name="q1" value="op3" checked={q1 === 'op3'} onChange={(e) => setQ1(e.target.value)} />
-                  <span className="custom-radio"></span>
-                  By Clicking on the link and attachment in it and verifying if its Spam by myself.
-                </label>
+            <div className="questions-container">
+              <div className="question-block">
+                <label className="question-label" htmlFor="q1">1. How would you report the email as SPAM in KNOX Portal *</label>
+                <div className="options-group">
+                  <label className={`option-radio ${q1 === 'op1' ? 'selected' : ''}`}>
+                    <input type="radio" id="q1-op1" name="q1" value="op1" checked={q1 === 'op1'} onChange={(e) => setQ1(e.target.value)} />
+                    <span className="custom-radio"></span>
+                    By Simple forwarding it to the SRI-B Information Security team.
+                  </label>
+                  <label className={`option-radio ${q1 === 'op2' ? 'selected' : ''}`}>
+                    <input type="radio" id="q1-op2" name="q1" value="op2" checked={q1 === 'op2'} onChange={(e) => setQ1(e.target.value)} />
+                    <span className="custom-radio"></span>
+                    By Using the KNOX Portal &quot;Report SPAM&quot; feature. So that my colleagues get an alert as Spam, When they open the said email
+                  </label>
+                  <label className={`option-radio ${q1 === 'op3' ? 'selected' : ''}`}>
+                    <input type="radio" id="q1-op3" name="q1" value="op3" checked={q1 === 'op3'} onChange={(e) => setQ1(e.target.value)} />
+                    <span className="custom-radio"></span>
+                    By Clicking on the link and attachment in it and verifying if its Spam by myself.
+                  </label>
+                </div>
               </div>
-            </div>
 
-            <div className="question-block">
-              <label className="question-label" htmlFor="q2">2. In case of queries, what is the correct way to report the Spam email to SRI-B Information Security team (sri.bitsec@samsung.com)? *</label>
-              <div className="options-group">
-                <label className={`option-radio ${q2 === 'op1' ? 'selected' : ''}`}>
-                  <input type="radio" id="q2-op1" name="q2" value="op1" checked={q2 === 'op1'} onChange={(e) => setQ2(e.target.value)} />
-                  <span className="custom-radio"></span>
-                  By forwarding the email to sri.bsec@samsung.com.
-                </label>
-                <label className={`option-radio ${q2 === 'op2' ? 'selected' : ''}`}>
-                  <input type="radio" id="q2-op2" name="q2" value="op2" checked={q2 === 'op2'} onChange={(e) => setQ2(e.target.value)} />
-                  <span className="custom-radio"></span>
-                  By forwarding the email as an attachment to sri.bsec@samsung.com.
-                </label>
-                <label className={`option-radio ${q2 === 'op3' ? 'selected' : ''}`}>
-                  <input type="radio" id="q2-op3" name="q2" value="op3" checked={q2 === 'op3'} onChange={(e) => setQ2(e.target.value)} />
-                  <span className="custom-radio"></span>
-                  By Clicking on the link and attachment in it and verifying if its Spam by myself.
-                </label>
+              <div className="question-block">
+                <label className="question-label" htmlFor="q2">2. In case of queries, what is the correct way to report the Spam email to SRI-B Information Security team (sri.bitsec@samsung.com)? *</label>
+                <div className="options-group">
+                  <label className={`option-radio ${q2 === 'op1' ? 'selected' : ''}`}>
+                    <input type="radio" id="q2-op1" name="q2" value="op1" checked={q2 === 'op1'} onChange={(e) => setQ2(e.target.value)} />
+                    <span className="custom-radio"></span>
+                    By forwarding the email to sri.bsec@samsung.com.
+                  </label>
+                  <label className={`option-radio ${q2 === 'op2' ? 'selected' : ''}`}>
+                    <input type="radio" id="q2-op2" name="q2" value="op2" checked={q2 === 'op2'} onChange={(e) => setQ2(e.target.value)} />
+                    <span className="custom-radio"></span>
+                    By forwarding the email as an attachment to sri.bsec@samsung.com.
+                  </label>
+                  <label className={`option-radio ${q2 === 'op3' ? 'selected' : ''}`}>
+                    <input type="radio" id="q2-op3" name="q2" value="op3" checked={q2 === 'op3'} onChange={(e) => setQ2(e.target.value)} />
+                    <span className="custom-radio"></span>
+                    By Clicking on the link and attachment in it and verifying if its Spam by myself.
+                  </label>
+                </div>
               </div>
             </div>
 
@@ -97,7 +125,18 @@ const Submission = () => {
 
             <div className="comment-section">
               <label className="comment-label" htmlFor="comment">Comment (Max: 500 Chars)</label>
-              <textarea id="comment" className="comment-box" value={comment} onChange={(e) => setComment(e.target.value)} maxLength="500" placeholder="xxx-xxx-xx-xxx-x"></textarea>
+              <textarea 
+                id="comment" 
+                className="comment-box" 
+                value={comment} 
+                onChange={(e) => setComment(e.target.value)} 
+                maxLength="500" 
+                placeholder="xxx-xxx-xx-xxx-x"
+                style={{
+                  '--placeholder-font-weight': '700',
+                  '--placeholder-color': '#9ca3af'
+                }}
+              ></textarea>
             </div>
             
             <div className="form-actions-container">
@@ -115,6 +154,6 @@ const Submission = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Submission;
