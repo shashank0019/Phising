@@ -114,14 +114,14 @@ const Report = ({ presenterImage }) => {
                 alt="Vector 2" 
                 className="note-vector2-icon" 
                 onClick={toggleNoteVisibility}
-                style={{cursor: 'pointer', position: 'absolute', top: '-26px', right: '2px', zIndex: '12'}}
+                style={{cursor: 'pointer', position: 'absolute', top: '-36px', right: '2px', zIndex: '12'}}
               />
               <img 
                 src={vector} 
                 alt="Vector" 
                 className="note-vector-icon" 
                 onClick={toggleNoteVisibility}
-                style={{cursor: 'pointer', position: 'absolute', top: '-22px', right: '2px', zIndex: '11'}}
+                style={{cursor: 'pointer', position: 'absolute', top: '-32px', right: '2px', zIndex: '11'}}
               />
 
               {/* Note Section - Positioned in top-right corner of video */}
