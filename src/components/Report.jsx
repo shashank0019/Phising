@@ -114,7 +114,6 @@ const Report = ({ presenterImage }) => {
                 alt="Vector 2" 
                 className="note-vector2-icon" 
                 onClick={toggleNoteVisibility}
-                style={{cursor: 'pointer', position: 'absolute', top: '-36px', right: '2px', zIndex: '12'}}
               />
               <img 
                 src={vector} 
