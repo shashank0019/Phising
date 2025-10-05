@@ -460,6 +460,18 @@
   outline: none !important;
   border: none !important;
   box-shadow: none !important;
+  cursor: pointer !important;
+  position: absolute !important;
+  top: 6px !important;
+  right: 21px !important;
+  z-index: 12 !important;
+  width: 6px !important;
+  height: 6px !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.note-vector2-icon:hover {
+  opacity: 0.7 !important;
 }
 
 .note-vector2-icon:focus {
@@ -472,4 +484,5 @@
   outline: none !important;
   border: none !important;
   box-shadow: none !important;
+  opacity: 0.5 !important;
 }

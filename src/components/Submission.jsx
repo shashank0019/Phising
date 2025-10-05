@@ -56,8 +56,8 @@ const Submission = () => {
                 style={{
                   cursor: 'pointer',
                   position: 'absolute',
-                  top: '4px',
-                  right: '20px',
+                  top: '6px',
+                  right: '22px',
                   zIndex: '12',
                   width: '6px',
                   height: '6px'
